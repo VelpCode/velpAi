@@ -3,11 +3,14 @@ import React from 'react'
 const Navbar = () => {
   return (
     <div>
-        <div className="navbar flex mt-10">
-                <li className='t text-6xl'>Home</li>
+        <div className="navbar flex mt-10 align-middle items-center justify-between p-5">
+          <div className="logo text-3xl">TestGem</div>
+          <ul className='d flex gap-10'>
+                <li>Home</li>
                 <li>About</li>
                 <li>AI Art</li>
                 <li>Gemeni AI</li>
+          </ul>
         </div>
     </div>
 
