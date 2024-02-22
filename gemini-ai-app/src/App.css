@@ -1,0 +1,15 @@
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./components/fonts/Inter-SemiBold.woff2') format('woff2'),
+         url('./components/fonts/InterVariable.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
+* {
+
+    font-family: 'Inter', sans-serif;
+
+}
