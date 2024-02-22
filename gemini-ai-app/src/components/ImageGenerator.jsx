@@ -19,7 +19,7 @@ const ImageGenerator = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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",
+            "Authorization": "Bearer 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",
             "User-Agent": "Chrome", // Corrected syntax
           },
           body: JSON.stringify({
@@ -29,10 +29,9 @@ const ImageGenerator = () => {
           }),
         }
       );
-      const data = await response.json();
-      // Set the image URL based on the response
-      // This assumes the API returns a URL; adjust as needed based on actual API response structure
-      setImage_url(data.image_url); // Placeholder; adjust to actual API response
+      let data = await response.json();
+      let data_array = data.data;
+      setImage_url(data_array[0].url);
     } catch (error) {
       console.error('Error generating image:', error);
     }
@@ -43,11 +42,11 @@ const ImageGenerator = () => {
     <div className = "ai-image-gen flex flex-col justify-center items-center mt-10">
         
         <div className="header text-5xl mb-10 ">Your Ai Image</div>
-        <img className = "inage h-[300px] w-[300px] mb-5" src = {image_url==="/"?default_image:image_url} />
+        <img className = "inage h-[300px] w-[300px] mb-5" src = {image_url==="/"?Velp : image_url} alt="Generated" />
 
         <div className="searchbox flex mb-10">
           <input type="text" ref={inputRef} className="searchname h-[20px] w-[400px] p-8 rounded-lg" />
-          <button className='generate-button ml-5' onClick={() => {imageGenerator}}>Generate</button>
+          <button className='generate-button ml-5' onClick={() => {imageGenerator()}}>Generate</button>
         </div>
     </div>
   )
